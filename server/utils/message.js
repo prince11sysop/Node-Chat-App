@@ -1,3 +1,4 @@
+//For sending normal message
 var generateMessage=(from,text)=>{
     return {
         from,
@@ -6,5 +7,14 @@ var generateMessage=(from,text)=>{
     };
 };
 
-module.exports={generateMessage};
+//For sending location url
+var generateLocationMessage=(from, latitude,longitude)=>{
+    return{
+        from,
+        url: `https://www.google.com/maps?q=${latitude},${longitude}`,
+        createdAt: new Date().getTime()
+    }
+};
+
+module.exports={generateMessage, generateLocationMessage};
 
