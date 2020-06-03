@@ -30,8 +30,8 @@ io.on('connection', (socket) => {
     users.addUser(socket.id, params.name, params.room);
 
     io.to(params.room).emit('updateUserList', users.getUserList(params.room));
-    socket.emit('newMessage', generateMessage('Admin', 'Welcome to the chat app'));
-    socket.broadcast.to(params.room).emit('newMessage', generateMessage('Admin', `${params.name} has joined.`));
+    socket.emit('newMessage', generateMessage('PrinceBot', `Hello ${params.name}, Welcome to the Prince Chat App:)`));
+    socket.broadcast.to(params.room).emit('newMessage', generateMessage('PrinceBot', `${params.name} joined the Chat.`));
     callback();
   });
 
@@ -63,7 +63,7 @@ io.on('connection', (socket) => {
 
     if (user) {
       io.to(user.room).emit('updateUserList', users.getUserList(user.room));
-      io.to(user.room).emit('newMessage', generateMessage('Admin', `${user.name} has left.`));
+      io.to(user.room).emit('newMessage', generateMessage('PrinceBot', `${user.name} has left the chat:(`));
     }
   });
 });
