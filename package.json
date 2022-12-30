@@ -16,7 +16,7 @@
   "dependencies": {
     "expect": "^26.0.1",
     "express": "^4.17.1",
-    "mocha": "^7.1.2",
+    "mocha": "^10.2.0",
     "moment": "^2.26.0",
     "socket.io": "^2.3.0"
   }
